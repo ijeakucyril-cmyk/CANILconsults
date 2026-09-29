@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- TAB LOGO (Maroon & Gold Compass Icon) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><path fill='%23660000' d='M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm50.7-313.4l-39.2 117.7c-1.7 5.1-5.8 9.2-10.9 10.9L138.9 366.4c-8.7 2.9-17.5-4.9-14.6-13.6l39.2-117.7c1.7-5.1 5.8-9.2 10.9-10.9l117.7-39.2c8.7-2.9 17.5 4.9 14.6 13.6z'/></svg>">
+    
+    <title>CANIL - Premium Travel & Educational Consults</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+    <title>CANIL - Consultancy Services Limited</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navigation Header -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <!-- Brand / Logo Area -->
+            <a href="#" class="logo" data-page="home">
+                <div class="logo-box">
+                    <i class="fa-solid fa-compass"></i>
+                    <span>CANIL</span>
+                </div>
+            </a>
+
+            <!-- Search Bar Component -->
+            <div class="search-container">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" id="search-input" placeholder="Search services, destinations..." autocomplete="off">
+                <button id="search-clear" class="search-clear"><i class="fa-solid fa-xmark"></i></button>
+                
+                <!-- Search Results Overlay Dropdown -->
+                <div id="search-results" class="search-results-dropdown"></div>
+            </div>
+
+            <!-- Page Navigation Links -->
+            <nav class="nav-links">
+                <a href="#home" class="nav-btn active" data-page="home"><i class="fa-solid fa-house"></i> Home</a>
+                <a href="#about" class="nav-btn" data-page="about"><i class="fa-solid fa-circle-info"></i> About Us</a>
+                <a href="#services" class="nav-btn" data-page="services"><i class="fa-solid fa-briefcase"></i> Services</a>
+                <a href="#gallery" class="nav-btn" data-page="gallery"><i class="fa-solid fa-images"></i> Gallery</a>
+                <a href="#contact" class="nav-btn" data-page="contact"><i class="fa-solid fa-envelope"></i> Contact Us</a>
+            </nav>
+
+            <div class="nav-actions">
+                <!-- Light / Dark Mode Toggle -->
+                <button id="theme-toggle" aria-label="Toggle Theme" title="Toggle Theme">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <!-- Mobile Navigation Toggle -->
+                <button id="mobile-menu-btn" aria-label="Toggle Navigation">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Dynamic Content Container -->
+    <main id="app-content">
+
+        <!-- ================= HOME PAGE ================= -->
+        <section id="page-home" class="page-section active">
+            <!-- Hero Banner -->
+            <div class="hero">
+                <div class="hero-overlay"></div>
+                <div class="container hero-content">
+                    <span class="hero-badge"><i class="fa-solid fa-star"></i> Trusted Travel Partner</span>
+                    <h1>Explore The World With CANIL</h1>
+                    <p>Your premier destination for visa consultation, study abroad opportunities, flight reservations, and custom holiday packages worldwide.</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary nav-btn" data-page="services">Explore Services</button>
+                        <button class="btn btn-secondary nav-btn" data-page="contact">Book Consultation</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Highlights Grid -->
+            <div class="section-padding">
+                <div class="container">
+                    <div class="section-title">
+                        <h2>Why Choose CANIL?</h2>
+                        <p>Delivering excellence, speed, and reliability in travel solutions.</p>
+                    </div>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <i class="fa-solid fa-passport"></i>
+                            <h3>98% Visa Rate</h3>
+                            <p>Proven track record in successful visa documentation and interview preparation.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fa-solid fa-headset"></i>
+                            <h3>24/7 Client Support</h3>
+                            <p>Dedicated consultation agents available around the clock to address all inquiries.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fa-solid fa-earth-americas"></i>
+                            <h3>Global Network</h3>
+                            <p>Direct connections with universities, hotels, and airlines across over 50 countries.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Services Preview -->
+            <div class="section-padding bg-alt">
+                <div class="container">
+                    <div class="section-title">
+                        <h2>Our Popular Offerings</h2>
+                        <p>A quick view into what CANIL Consultancy Services Limited offers.</p>
+                    </div>
+                    <div class="services-grid">
+                        <div class="service-card">
+                            <div class="icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                            <h3>Study Abroad Advisory</h3>
+                            <p>Get admitted to top universities with scholarship guidance and visa backing.</p>
+                            <button class="btn-text open-modal" data-service="Study Abroad Advisory">Learn More &rarr;</button>
+                        </div>
+                        <div class="service-card">
+                            <div class="icon"><i class="fa-solid fa-plane-departure"></i></div>
+                            <h3>Flight Ticketing</h3>
+                            <p>Best international rates and seamless ticketing with flexibility.</p>
+                            <button class="btn-text open-modal" data-service="Flight Ticketing">Learn More &rarr;</button>
+                        </div>
+                        <div class="service-card">
+                            <div class="icon"><i class="fa-solid fa-hotel"></i></div>
+                            <h3>Hotel Reservations</h3>
+                            <p>Handpicked accommodations globally matching your style and budget.</p>
+                            <button class="btn-text open-modal" data-service="Hotel Reservations">Learn More &rarr;</button>
+                        </div>
+                    </div>
+                    <div class="center-btn">
+                        <button class="btn btn-primary nav-btn" data-page="services">View All Services</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= ABOUT US PAGE ================= -->
+        <section id="page-about" class="page-section">
+            <div class="page-banner">
+                <div class="container">
+                    <h1>About CANIL Consultancy Services Limited</h1>
+                    <p>Learn about our vision, leadership, and mission in seamless travel navigation.</p>
+                </div>
+            </div>
+
+            <div class="section-padding">
+                <div class="container grid-2">
+                    <div class="about-image">
+                        <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=800&q=80" alt="Travel Planning at CANIL">
+                    </div>
+                    <div class="about-text">
+                        <span class="sub-heading">Who We Are</span>
+                        <h2>Dedicated To Simplifying Your Journey</h2>
+                        <p>CANIL is a multi-faceted travel and educational consulting agency. Founded with the mission to eliminate travel anxiety, we provide tailored solutions for students, families, executives, and holidaymakers.</p>
+                        <p>Our experienced consultants walk alongside you from document compilation to arriving at your final destination.</p>
+                        
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <h3>10k+</h3>
+                                <p>Happy Clients</p>
+                            </div>
+                            <div class="stat-item">
+                                <h3>50+</h3>
+                                <p>Destinations</p>
+                            </div>
+                            <div class="stat-item">
+                                <h3>98%</h3>
+                                <p>Success Rate</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-padding bg-alt">
+                <div class="container">
+                    <div class="section-title">
+                        <h2>Our Core Principles</h2>
+                        <p>What drives the CANIL team every day.</p>
+                    </div>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            <h3>Integrity</h3>
+                            <p>Clear guidance, transparent costs, and honest visa assessment with zero hidden fees.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fa-solid fa-bolt"></i>
+                            <h3>Efficiency</h3>
+                            <p>Fast application turnarounds and swift responses to keep your plans on schedule.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fa-solid fa-heart"></i>
+                            <h3>Client First</h3>
+                            <p>Custom travel solutions shaped specifically around your budget and schedule.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SERVICES PAGE ================= -->
+        <section id="page-services" class="page-section">
+            <div class="page-banner">
+                <div class="container">
+                    <h1>Our Professional Services</h1>
+                    <p>Tailored travel and educational solutions designed for your unique aspirations.</p>
+                </div>
+            </div>
+
+            <div class="section-padding">
+                <div class="container">
+                    <!-- Service Category Filter -->
+                    <div class="filter-bar">
+                        <button class="filter-btn active" data-filter="all">All Services</button>
+                        <button class="filter-btn" data-filter="visa">Visa Services</button>
+                        <button class="filter-btn" data-filter="education">Education</button>
+                        <button class="filter-btn" data-filter="travel">Travel & Booking</button>
+                    </div>
+
+                    <div class="services-grid" id="full-services-grid">
+                        <div class="service-card" data-category="visa">
+                            <div class="icon"><i class="fa-solid fa-passport"></i></div>
+                            <h3>Tourist & Business Visas</h3>
+                            <p>Complete support for documentation, filing, embassy appointments, and mock interview preparations for UK, USA, Schengen, Canada & Australia.</p>
+                            <button class="btn btn-primary open-modal" data-service="Tourist & Business Visas">Inquire Now</button>
+                        </div>
+
+                        <div class="service-card" data-category="education">
+                            <div class="icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                            <h3>Study Abroad Admissions</h3>
+                            <p>End-to-end guidance including course selection, university application processing, statement of purpose assistance, and student visa guidance.</p>
+                            <button class="btn btn-primary open-modal" data-service="Study Abroad Admissions">Inquire Now</button>
+                        </div>
+
+                        <div class="service-card" data-category="travel">
+                            <div class="icon"><i class="fa-solid fa-plane-departure"></i></div>
+                            <h3>Flight Bookings & Ticketing</h3>
+                            <p>Affordable international and local flight tickets with group discounts, date change flexibility, and route management.</p>
+                            <button class="btn btn-primary open-modal" data-service="Flight Bookings & Ticketing">Inquire Now</button>
+                        </div>
+
+                        <div class="service-card" data-category="travel">
+                            <div class="icon"><i class="fa-solid fa-hotel"></i></div>
+                            <h3>Hotel & Resort Reservations</h3>
+                            <p>Guaranteed bookings at verified hotels and luxury resorts worldwide, tailored for business travelers and vacationers.</p>
+                            <button class="btn btn-primary open-modal" data-service="Hotel & Resort Reservations">Inquire Now</button>
+                        </div>
+
+                        <div class="service-card" data-category="travel">
+                            <div class="icon"><i class="fa-solid fa-umbrella-beach"></i></div>
+                            <h3>Custom Vacation Packages</h3>
+                            <p>Curated holiday tours including airport transfers, guided sight-seeing, travel insurance, and resort accommodations.</p>
+                            <button class="btn btn-primary open-modal" data-service="Custom Vacation Packages">Inquire Now</button>
+                        </div>
+
+                        <div class="service-card" data-category="visa">
+                            <div class="icon"><i class="fa-solid fa-briefcase"></i></div>
+                            <h3>Work & Permanent Relocation</h3>
+                            <p>Consultation services covering skilled worker visas, corporate relocation, and global mobility paths.</p>
+                            <button class="btn btn-primary open-modal" data-service="Work & Relocation Consults">Inquire Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= GALLERY PAGE ================= -->
+        <section id="page-gallery" class="page-section">
+            <div class="page-banner">
+                <div class="container">
+                    <h1>Travel Photo Gallery</h1>
+                    <p>Capturing unforgettable destinations, tour memories, and client journeys.</p>
+                </div>
+            </div>
+
+            <div class="section-padding">
+                <div class="container">
+                    <!-- Gallery Filter -->
+                    <div class="filter-bar">
+                        <button class="gallery-filter-btn active" data-gfilter="all">All Photos</button>
+                        <button class="gallery-filter-btn" data-gfilter="beach">Beaches</button>
+                        <button class="gallery-filter-btn" data-gfilter="city">Cities</button>
+                        <button class="gallery-filter-btn" data-gfilter="adventure">Adventure</button>
+                    </div>
+
+                    <div class="gallery-grid" id="gallery-container">
+                        <div class="gallery-item" data-gcat="beach" data-title="Tropical Beach Resort" data-desc="White sandy beaches in the Maldives.">
+                            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80" alt="Tropical Beach Resort">
+                            <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i><span>Tropical Beach Resort</span></div>
+                        </div>
+
+                        <div class="gallery-item" data-gcat="city" data-title="Paris Eiffel Experience" data-desc="Historic landmarks and city lights in France.">
+                            <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=80" alt="Paris Eiffel Tower">
+                            <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i><span>Paris Eiffel Experience</span></div>
+                        </div>
+
+                        <div class="gallery-item" data-gcat="adventure" data-title="Scenic Mountain Highway" data-desc="Road trips through breathtaking mountain ranges.">
+                            <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=800&q=80" alt="Scenic Mountain Highway">
+                            <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i><span>Scenic Mountain Highway</span></div>
+                        </div>
+
+                        <div class="gallery-item" data-gcat="city" data-title="Modern Skyline - Dubai" data-desc="Architectural marvels and luxury shopping trips.">
+                            <img src="https://images.unsplash.com/photo-1512100356356-de1b84283e18?auto=format&fit=crop&w=800&q=80" alt="Dubai Architecture">
+                            <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i><span>Modern Skyline - Dubai</span></div>
+                        </div>
+
+                        <div class="gallery-item" data-gcat="adventure" data-title="Desert Safari Adventure" data-desc="Unforgettable dune bashing and sunset tours.">
+                            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80" alt="Desert Safari">
+                            <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i><span>Desert Safari Adventure</span></div>
+                        </div>
+
+                        <div class="gallery-item" data-gcat="beach" data-title="Island Getaway" data-desc="Crystal clear oceans and luxury overwater bungalows.">
+                            <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80" alt="Island Resort">
+                            <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i><span>Island Getaway</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= CONTACT PAGE ================= -->
+        <section id="page-contact" class="page-section">
+            <div class="page-banner">
+                <div class="container">
+                    <h1>Contact CANIL Consults</h1>
+                    <p>Have inquiries? Speak directly with our travel specialists.</p>
+                </div>
+            </div>
+
+            <div class="section-padding">
+                <div class="container">
+                    <div class="grid-2">
+                        <!-- Contact Info Cards -->
+                        <div class="contact-info">
+                            <h3>Get In Touch</h3>
+                            <p>Visit our head office or reach out to us using any of the channels below.</p>
+
+                            <div class="info-box">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <div>
+                                    <h4>Office Address</h4>
+                                    <p>123 Business Avenue, Suite 100, Financial District, City</p>
+                                </div>
+                            </div>
+
+                            <div class="info-box">
+                                <i class="fa-solid fa-phone"></i>
+                                <div>
+                                    <h4>Phone Lines</h4>
+                                    <p>+234 803 501 1349</p>
+                                </div>
+                            </div>
+
+                            <div class="info-box">
+                                <i class="fa-solid fa-envelope"></i>
+                                <div>
+                                    <h4>Email Address</h4>
+                                    <p>canil.consultancy@gmail.com</p>
+                                </div>
+                            </div>
+
+                            <div class="info-box">
+                                <i class="fa-solid fa-clock"></i>
+                                <div>
+                                    <h4>Working Hours</h4>
+                                    <p>Monday - Friday: 8:00 AM - 6:00 PM<br>Saturday: 9:00 AM - 2:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Direct Form -->
+                        <form class="contact-form" id="main-contact-form">
+                            <h3>Send Us A Message</h3>
+                            <div class="form-group">
+                                <label for="c-name">Full Name</label>
+                                <input type="text" id="c-name" placeholder="Enter your full name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="c-email">Email Address</label>
+                                <input type="email" id="c-email" placeholder="name@example.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="c-service">Service of Interest</label>
+                                <select id="c-service">
+                                    <option>Visa Consultation</option>
+                                    <option>Study Abroad Advisory</option>
+                                    <option>Flight Booking</option>
+                                    <option>Hotel Booking</option>
+                                    <option>Vacation Package</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="c-message">Your Message</label>
+                                <textarea id="c-message" rows="4" placeholder="How can CANIL assist you?" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Lightbox Photo Preview Modal -->
+    <div id="lightbox-modal" class="modal">
+        <span class="modal-close" id="lightbox-close">&times;</span>
+        <div class="lightbox-content">
+            <img id="lightbox-img" src="" alt="Gallery Large View">
+            <div id="lightbox-caption" class="lightbox-caption"></div>
+        </div>
+    </div>
+
+    <!-- Service Booking Modal -->
+    <div id="service-modal" class="modal">
+        <div class="modal-card">
+            <span class="modal-close" id="service-close">&times;</span>
+            <h3 id="modal-service-title">Inquire About Service</h3>
+            <p>Fill in your details and a CANIL consultant will contact you within 24 hours.</p>
+            <form id="booking-modal-form">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="tel" placeholder="+123..." required>
+                </div>
+                <div class="form-group">
+                    <label>Additional Notes</label>
+                    <textarea rows="3" placeholder="Preferred travel dates or questions..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit Inquiry</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <div class="logo-box">
+                    <i class="fa-solid fa-compass"></i>
+                    <span>CANIL</span>
+                </div>
+                <p>Your trusted visa, travel, and educational advisory partner.</p>
+            </div>
+            
+            <div class="footer-copy">
+                <p>&copy; 2026 CANIL Consults. All Rights Reserved.</p>
+            </div>
+
+            <div class="socials">
+                <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
