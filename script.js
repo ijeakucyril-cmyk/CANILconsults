@@ -235,14 +235,22 @@ document.addEventListener('DOMContentLoaded', () => {
         bookingForm.reset();
     });
 
-    const mainContactForm = document.getElementById('main-contact-form');
-    if (mainContactForm) {
-        mainContactForm.addEventListener('submit', async (e) => {
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
+
+            const emailInput = document.getElementById('c-email');
+            const email = emailInput ? emailInput.value.trim() : '';
+
+            if (!email) {
+                alert('Please enter a valid email address.');
+                return;
+            }
 
             const formData = {
                 name: document.getElementById('c-name').value,
-                email: document.getElementById('c-email').value,
+                email,
                 service: document.getElementById('c-service').value,
                 message: document.getElementById('c-message').value
             };
@@ -261,7 +269,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
 
                 alert('Success! ' + result.message);
-                mainContactForm.reset();
+                contactForm.reset();
             } catch (err) {
                 console.error('Fetch Error:', err);
                 alert('Could not reach the CANIL contact server. Please try again later.');
