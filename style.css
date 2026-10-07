@@ -95,13 +95,21 @@ body {
 }
 
 /* Buttons */
+button,
+.btn,
+a.btn {
+    position: relative;
+    z-index: 10;
+    cursor: pointer;
+    touch-action: manipulation;
+}
+
 .btn {
     display: inline-block;
     padding: 12px 28px;
     border-radius: 5px;
     text-decoration: none;
     font-weight: 600;
-    cursor: pointer;
     transition: var(--transition);
     border: none;
     font-size: 0.95rem;

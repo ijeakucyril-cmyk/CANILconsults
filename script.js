@@ -237,46 +237,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const mainContactForm = document.getElementById('main-contact-form');
     if (mainContactForm) {
-        mainContactForm.addEventListener('submit', (e) => {
+        mainContactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
-            alert('Your message has been sent successfully to CANIL! We will respond shortly.');
-            mainContactForm.reset();
+
+            const formData = {
+                name: document.getElementById('c-name').value,
+                email: document.getElementById('c-email').value,
+                service: document.getElementById('c-service').value,
+                message: document.getElementById('c-message').value
+            };
+
+            try {
+                const response = await fetch('https://canil-backend.onrender.com/api/contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData)
+                });
+                const result = await response.json();
+
+                if (!response.ok || !result.success) {
+                    alert('Server Error: ' + (result.message || 'Your message could not be sent.'));
+                    return;
+                }
+
+                alert('Success! ' + result.message);
+                mainContactForm.reset();
+            } catch (err) {
+                console.error('Fetch Error:', err);
+                alert('Could not reach the CANIL contact server. Please try again later.');
+            }
         });
     }
 
 });
-// Connect main contact form in script.js
-const mainContactForm = document.getElementById('main-contact-form');
-
-if (mainContactForm) {
-    mainContactForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-
-        // Collect inputs from form
-        const formData = {
-            name: document.getElementById('c-name')?.value || 'Test User',
-            email: document.getElementById('c-email')?.value || 'test@example.com',
-            service: document.getElementById('c-service')?.value || 'General Inquiry',
-            message: document.getElementById('c-message')?.value || 'Testing CANIL backend server connection.'
-        };
-
-        try {
-            const response = await fetch('https://canil-backend.onrender.com/api/contact', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(formData)
-            });
-
-            const result = await response.json();
-
-            if (result.success) {
-                alert('Success! ' + result.message);
-            } else {
-                alert('Server Error: ' + result.message);
-            }
-        } catch (err) {
-            console.error('Fetch Error:', err);
-            alert('Could not reach backend server on port 5000.');
-        }
-    });
-}
